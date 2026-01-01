@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+              function validateForm(){
+            var fname = document.myForm.firstname.value;
+
+            if (fname == "") {
+                alert("firstname cannot be empty");
+                return false; // stop submission
+            }
+             var letters = /^[A-Za-z]+$/;
+      if(!fname.match(letters))
+      {
+      alert('Please enter only letters');
+      return false;
+      } 
+      var lname= document.myForm.lastname.value;
+
+      if (lname == ""){
+        alert("lastname cannot be empty");
+        return false;
+      }
+
+      var letters = /^[A-Za-z]+$/;
+      if(!lname.match(letters)){
+        alert("please enter only letters")
+      return false;
+      }
+
+       var password = document.myForm.password.value;
+    if(password.length < 6){
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+     var pattern = /^[0-9]+$/;
+    if(!pattern.test(password)){
+        alert("Password must contain digits only");
+        return false;
+    }
+
+    var number = document.myForm.number.value;
+    
+    var pattern = /^[0-9]+$/;
+    if(!pattern.test(number)){
+      alert("Mobile Number must contain digits only");
+      return false;
+    }
+    if(number.length!=10){
+      alert("Mobile numbers must be 10 digits only");
+      return false;
+    }
+
+    alert("Form Submitted Successfully!");
+            return true; // allow submission
+        } 
+    </script>
+</head>
+<body style="background-color: rgb(247, 201, 201); text-align: center;">
+<h2>Register with the Souled-Store</h2> <div class="logo">
+            <img src="img.logo.png" width="75px" >
+        </div>
+        <br>
+<form name="myForm" onsubmit="return validateForm()">
+First Name: <input type="text" name="firstname">
+<br>
+<br>
+Last Name: <input type="text" name="lastname">
+<br>
+<br>
+Password: <input type="text" name="password">
+<br>
+<br>
+Email Address: <input type="email" name="email">
+<br>
+<br>
+Address: <textarea name="Address" rows="4" cols="40"></textarea>
+<br>
+<br>
+Mobile No: <input type="tel" name="number">
+<br>
+<br>
+Gender: Male <input type="radio" name="Gender" id="male">
+        Female <input type="radio" name="Gender" id="female">
+        <br>
+        <br>
+<input type="submit" value="Submit"> <input type="Reset" value="Reset">
+<br>
+<br>
+Already a Customer? <a href="Login.html">Login</a>
+<br>
+<h2 style="background-color: red; color: white; text-align: center;">HOMEGROWN INDIAN BRAND</h2>
+      <br>
+      <p style="text-align: center;">
+        “Our mission is to provide high-quality, comfortable, and stylish clothing that reflects your personality.” 
+         </p>
+         <p style="text-align: center;">
+        “Designed with passion. Made for comfort.”
+         </p>
+</form>
+<h6>Copyright@2025-Souledstore</h6>
+</body>
+</html>
